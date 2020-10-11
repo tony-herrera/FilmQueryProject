@@ -6,6 +6,12 @@ public class Actor {
 	private String firstName;
 	private String lastName;
 
+	public Actor(String fName, String lName, int iD2) {
+		this.firstName = fName;
+		this.lastName = lName;
+		this.id = iD2;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -16,6 +22,10 @@ public class Actor {
 
 	public String getFirstName() {
 		return firstName;
+	}
+
+	public Actor() {
+		super();
 	}
 
 	public void setFirstName(String firstName) {
@@ -66,7 +76,15 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Actor [id=");
+		builder.append(id);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append("]");
+		return builder.toString();
 	}
 
 }

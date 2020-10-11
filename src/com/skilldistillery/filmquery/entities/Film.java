@@ -14,10 +14,11 @@ public class Film {
 	private int replacementCost;
 	private String rating;
 	private String specialFeatures;
-	private List<Actor> actors;
+	private List<Actor> actorsInFilm;
 
 	public Film(int id, String title, String description, int releaseYear, String languageId, int length,
-			int rentalDuration, int rentalRate, int replacementCost, String rating, String specialFeatures) {
+			int rentalDuration, int rentalRate, int replacementCost, String rating, String specialFeatures,
+			List<Actor> actorsInFilm) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -30,7 +31,35 @@ public class Film {
 		this.replacementCost = replacementCost;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
+		this.actorsInFilm = actorsInFilm;
 	}
+
+	public Film() {
+	}
+
+	public Film(int id, String title, String description, String rating) {
+
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.language = language;
+		this.rating = rating;
+	}
+
+	public Film(int id, String title, String description, String rating, String language, int release_year) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.rating = rating;
+		this.language = language;
+		this.releaseYear = release_year;
+
+	}
+
+//	public Film(int id2, String title2, String description2, String rating2, String language2, int release_year) {
+//		
+//		// TODO Auto-generated constructor stub
+//	}
 
 	public int getId() {
 		return id;
@@ -80,30 +109,6 @@ public class Film {
 		this.length = length;
 	}
 
-	public int getRentalDuration() {
-		return rentalDuration;
-	}
-
-	public void setRentalDuration(int rentalDuration) {
-		this.rentalDuration = rentalDuration;
-	}
-
-	public int getRentalRate() {
-		return rentalRate;
-	}
-
-	public void setRentalRate(int rentalRate) {
-		this.rentalRate = rentalRate;
-	}
-
-	public int getReplacementCost() {
-		return replacementCost;
-	}
-
-	public void setReplacementCost(int replacementCost) {
-		this.replacementCost = replacementCost;
-	}
-
 	public String getRating() {
 		return rating;
 	}
@@ -130,9 +135,6 @@ public class Film {
 		result = prime * result + length;
 		result = prime * result + ((rating == null) ? 0 : rating.hashCode());
 		result = prime * result + releaseYear;
-		result = prime * result + rentalDuration;
-		result = prime * result + rentalRate;
-		result = prime * result + replacementCost;
 		result = prime * result + ((specialFeatures == null) ? 0 : specialFeatures.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
@@ -168,12 +170,6 @@ public class Film {
 			return false;
 		if (releaseYear != other.releaseYear)
 			return false;
-		if (rentalDuration != other.rentalDuration)
-			return false;
-		if (rentalRate != other.rentalRate)
-			return false;
-		if (replacementCost != other.replacementCost)
-			return false;
 		if (specialFeatures == null) {
 			if (other.specialFeatures != null)
 				return false;
@@ -189,9 +185,45 @@ public class Film {
 
 	@Override
 	public String toString() {
-		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
-				+ ", languageId=" + language + ", length=" + length + ", rentalDuration=" + rentalDuration
-				+ ", rentalRate=" + rentalRate + ", replacementCost=" + replacementCost + ", rating=" + rating
-				+ ", specialFeatures=" + specialFeatures + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Film [id=");
+		builder.append(id);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", releaseYear=");
+		builder.append(releaseYear);
+		builder.append(", language=");
+		builder.append(language);
+		builder.append(", length=");
+		builder.append(length);
+		builder.append(", rating=");
+		builder.append(rating);
+		builder.append(", specialFeatures=");
+		builder.append(specialFeatures);
+		builder.append(", actorsInFilm=");
+		for (Actor actor : actorsInFilm) {
+			builder.append(actor + "\n");
+		}
+		builder.append("]");
+		return builder.toString();
 	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public List<Actor> getActorsInFilm() {
+		return actorsInFilm;
+	}
+
+	public void setActorsInFilm(List<Actor> actorsInFilm) {
+		this.actorsInFilm = actorsInFilm;
+	}
+
 }
