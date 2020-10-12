@@ -56,11 +56,6 @@ public class Film {
 
 	}
 
-//	public Film(int id2, String title2, String description2, String rating2, String language2, int release_year) {
-//		
-//		// TODO Auto-generated constructor stub
-//	}
-
 	public int getId() {
 		return id;
 	}

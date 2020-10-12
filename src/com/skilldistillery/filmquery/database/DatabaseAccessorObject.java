@@ -156,29 +156,4 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		return keywordForFilm;
 
 	}
-
-	public Film getLanguage(String language) throws SQLException {
-		Film getLang = new Film();
-
-		// Establish connection to database
-		Connection conn = DriverManager.getConnection(URL, user, pass);
-
-		// Establish SQL statement
-		String sql = "SELECT * FROM film JOIN language ON film.language = language.id WHERE film.id = ?";
-
-		// Prepared statement
-		PreparedStatement stmt = conn.prepareStatement(sql);
-
-		// Execute
-		stmt.setString(1, language);
-		ResultSet rs = stmt.executeQuery();
-
-		// Process Data
-		if (rs.next()) {
-			getLang.setLanguageId(rs.getString("language"));
-
-		}
-		return getLang;
-
-	}
 }
