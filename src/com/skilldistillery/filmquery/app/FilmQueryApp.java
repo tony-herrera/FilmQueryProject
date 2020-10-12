@@ -41,7 +41,13 @@ public class FilmQueryApp {
 	}
 
 	private void startUserInterface(Scanner sc) throws SQLException {
-		System.out.println("Welcome");
+		System.out.println();
+		System.out.println();
+		System.out.println(
+				" | | /| / /__ / /______  __ _  ___   / /____    / /_/ /  ___   /  |/  /__ _  __(_)__   / ___/__ _/ / /__ ____(_)__ _  / /\n"
+						+ " | |/ |/ / -_) / __/ _ \\/  ' \\/ -_) / __/ _ \\  / __/ _ \\/ -_) / /|_/ / _ \\ |/ / / -_) / (_ / _ `/ / / -_) __/ / _ `/ /_/ \n"
+						+ " |__/|__/\\__/_/\\__/\\___/_/_/_/\\__/  \\__/\\___/  \\__/_//_/\\__/ /_/  /_/\\___/___/_/\\__/  \\___/\\_,_/_/_/\\__/_/ /_/\\_,_/ (_)  \n"
+						+ "                                                                                                                         ");
 		System.out.println();
 
 		boolean makeAnotherSelection = true;
