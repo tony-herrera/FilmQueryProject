@@ -181,27 +181,27 @@ public class Film {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Film [id=");
+		builder.append("Film id: ");
 		builder.append(id);
-		builder.append(", title=");
+		builder.append("\n Title: ");
 		builder.append(title);
-		builder.append(", description=");
+		builder.append("\n Description: ");
 		builder.append(description);
-		builder.append(", releaseYear=");
+		builder.append("\n Release Year: ");
 		builder.append(releaseYear);
-		builder.append(", language=");
+		builder.append("\n Language: ");
 		builder.append(language);
-		builder.append(", length=");
+		builder.append("\n Total Run Time: ");
 		builder.append(length);
-		builder.append(", rating=");
+		builder.append("\n Rating: ");
 		builder.append(rating);
-		builder.append(", specialFeatures=");
+		builder.append("\n Special Features: ");
 		builder.append(specialFeatures);
-		builder.append(", actorsInFilm=");
+		builder.append("\n Actors and Actresses Who Are In This Film: ");
 		for (Actor actor : actorsInFilm) {
 			builder.append(actor + "\n");
 		}
-		builder.append("]");
+//		builder.append(".");
 		return builder.toString();
 	}
 
